@@ -35,6 +35,7 @@ $ npm run start
 $ npm run start:dev
 
 # production mode
+$ npm run build
 $ npm run start:prod
 ```
 
@@ -51,10 +52,14 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Core Logic
+## App Info
 
 ```bash
 
+#api example
+moodyapi/pageSize/:size/page/:page : moodyapi/pageSize/10/page/1
+
+#core logic
 PagesService : /src/pages/pages.service.ts
 
 ```
