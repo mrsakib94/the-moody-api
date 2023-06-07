@@ -26,7 +26,7 @@ PORT : Set the port number of The Moody API Application
 
 
 
-5. Start the server
+2. Start the server
 ```bash
 # development
 $ npm run start
@@ -51,3 +51,10 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Core Logic
+
+```bash
+
+PagesService : /src/pages/pages.service.ts
+
+```
