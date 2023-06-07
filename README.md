@@ -2,38 +2,69 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Till Pay By Link
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Till Pay By Link to serve the merchants and customers to create and manage payment requests, transactions and team members.
+Till Pay By Link helps to create payment URL for Till HPP.
 
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
+1. Set the environment variables in .env file from .env-example
+```bash
 
+DB_HOST : Host name of the database
+DB_PORT : Port number of the database
+DB_USERNAME : database username
+DB_PASSWORD : databse password
+DB_DATABASE : database name
+DB_NAME : TODO
+ENV : Service environment (default = DEVELOPMENT) 
+
+PORT : Set the port number of Till Pay By Link application
+
+AWS_PUBLIC_FOLDER : AWS S3 public storage location
+AWS_PRIVATE_FOLDER : AWS S3 private storage location
+
+```
+2. Set the NPM_TOKEN
+```bash
+
+$ export NPM_TOKEN=your-token
+```
+*Note this token is generated from our NPM account, one will need to be generated that is unique to yourself.*
+
+3. Set the AWS config
+```bash
+
+$ export AWS_ACCESS_KEY_ID="Your aws access key Id"
+$ export AWS_SECRET_ACCESS_KEY="Your AWS secret access key"
+$ export AWS_SESSION_TOKEN="Your session token"
+```
+*Note these values may be obtained from your awsapps login.*
+
+4. Run Docker and set up the database
+```bash
+# To bring up your local database
+$ docker-compose up
+
+# To bring down your local database
+$ docker-compose down
+```
+
+If you need to remove the volume linked to the database
+```bash
+# To get the name of the volume to remove
+$ docker volume ls
+
+$ docker volume rm <name of volume>
+```
+
+5. Start the server
 ```bash
 # development
 $ npm run start
@@ -58,16 +89,3 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
